@@ -1,2 +1,1 @@
-# text-generation
-Spamilton: Text Generation  with LSTMs and Hamilton Lyrics
+# Spamilton: Text Generation  with LSTMs and Hamilton Lyrics

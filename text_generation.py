@@ -42,8 +42,8 @@ def lstm_stack(predictors, label, max_seq_len, total_words):
                      weights = [embedding_matrix],
                      input_length=max_seq_len-1))
 	model.add(Bidirectional(LSTM(256, dropout=0.2, recurrent_dropout=0.2, return_sequences = True)))
+	model.add(LSTM(128, dropout=0.2, recurrent_dropout=0.2))
 	model.add(Dropout(0.2))
-	model.add(Bidirectional(LSTM(256, dropout=0.2, recurrent_dropout=0.2, return_sequences = True)))
 	model.add(Dense(total_words, activation='softmax'))
 	model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 	earlystop = EarlyStopping(monitor='val_loss', min_delta=0, patience=5, verbose=0, mode='auto')
